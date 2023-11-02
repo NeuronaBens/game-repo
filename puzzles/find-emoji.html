@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find the Emoji</title>
+    <link rel="stylesheet" href="find-emoji.css"></link>
+  </head>
+  <body>
+    <div class="form">
+    <h1 style="font-size: 2rem; color: #3498db; text-align: center;">Emoji Grid Generator</h1>
+
+<div style="margin: 10px 0;">
+  <label for="rows" style="font-weight: bold; font-size: 1.2rem; margin-right: 10px;">Rows:</label>
+  <input type="number" id="rows" value="10" style="width: 50px; padding: 5px; border: 1px solid #3498db;">
+</div>
+
+<div style="margin: 10px 0;">
+  <label for="columns" style="font-weight: bold; font-size: 1.2rem; margin-right: 10px;">Columns:</label>
+  <input type="number" id="columns" value="20" style="width: 50px; padding: 5px; border: 1px solid #3498db;">
+</div>
+
+<div style="margin: 10px 0;">
+  <label for="emoji1" style="font-weight: bold; font-size: 1.2rem; margin-right: 10px;">First Emoji:</label>
+  <input type="text" id="emoji1" value="Z" style="width: 30px; padding: 5px; border: 1px solid #3498db;">
+</div>
+
+<div style="margin: 10px 0;">
+  <label for="emoji2" style="font-weight: bold; font-size: 1.2rem; margin-right: 10px;">Second Emoji:</label>
+  <input type="text" id="emoji2" value="z" style="width: 30px; padding: 5px; border: 1px solid #3498db;">
+</div>
+
+<button id="generateButton" style="background-color: #3498db; color: #fff; border: none; padding: 10px 20px; font-size: 1.5rem; cursor: pointer; border-radius: 5px; margin-top: 20px;">Generate Emoji Grid</button>
+</div>
+    <div id="body1">
+        <div class="emoji-container" id="ec"></div>
+    </div>
+    <script src="find-emoji.js"></script>
+  </body>
+</html>

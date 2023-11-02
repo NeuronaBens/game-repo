@@ -1,0 +1,29 @@
+/* Reset default margin and padding */
+#body1 {
+  margin: 0;
+  padding: 0;
+  height: 120vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; /* Set a background color */
+  padding-bottom: 40px;
+}
+
+/* Style the emoji container */
+.emoji-container {
+  font-size: 24px; /* Adjust the font size as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px; /* Set a fixed width for the square container */
+  height: 300px; /* Set a fixed height for the square container */
+  border-radius: 10px; /* Add rounded corners */
+  word-wrap: break-word;
+  display: inline-block;
+  font-family: monospace;
+}
+
+.form {
+  padding: 10px;
+}
