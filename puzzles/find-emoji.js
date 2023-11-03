@@ -1,8 +1,8 @@
-//300px - 22 chars -> 13.6px per char
+//300px - 22 chars -> 13.45px per char
 
-function createEmojiGrid(columns, rows, emoji1, emoji2) {
+function createEmojiGrid(columns, rows, emoji1, emoji2, charsize) {
   const x = document.getElementById("ec");
-  const px = String(columns * 13.45) + "px";
+  const px = String(columns * charsize) + "px";
   x.style.width = px;
   const rand = Math.round(Math.random() * (rows * columns - 1));
   let text = "";
@@ -21,12 +21,13 @@ function createEmojiGrid(columns, rows, emoji1, emoji2) {
 document
   .getElementById("generateButton")
   .addEventListener("click", function () {
-    // Get the values from the input fields
+    // Get the selected emoji pair from the dropdown
+    var selectedEmoji = document.getElementById("emojiSelect").value.split(",");
+
+    // Get the values for rows and columns
     var rows = parseInt(document.getElementById("rows").value);
     var columns = parseInt(document.getElementById("columns").value);
-    var emoji1 = document.getElementById("emoji1").value;
-    var emoji2 = document.getElementById("emoji2").value;
 
-    // Call the createEmojiGrid function with the provided values
-    createEmojiGrid(columns, rows, emoji1, emoji2);
+    // Call the createEmojiGrid function with the selected emoji values
+    createEmojiGrid(columns, rows, selectedEmoji[0], selectedEmoji[1], 13.45);
   });

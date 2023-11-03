@@ -12,25 +12,30 @@
 
 <div style="margin: 10px 0;">
   <label for="rows" style="font-weight: bold; font-size: 1.2rem; margin-right: 10px;">Rows:</label>
-  <input type="number" id="rows" value="10" style="width: 50px; padding: 5px; border: 1px solid #3498db;">
+  <input type="number" id="rows" value="15" style="width: 50px; padding: 5px; border: 1px solid #3498db;">
 </div>
 
 <div style="margin: 10px 0;">
   <label for="columns" style="font-weight: bold; font-size: 1.2rem; margin-right: 10px;">Columns:</label>
-  <input type="number" id="columns" value="20" style="width: 50px; padding: 5px; border: 1px solid #3498db;">
+  <input type="number" id="columns" value="30" style="width: 50px; padding: 5px; border: 1px solid #3498db;">
 </div>
 
 <div style="margin: 10px 0;">
-  <label for="emoji1" style="font-weight: bold; font-size: 1.2rem; margin-right: 10px;">First Emoji:</label>
-  <input type="text" id="emoji1" value="Z" style="width: 30px; padding: 5px; border: 1px solid #3498db;">
+  <label for="emojiSelect" style="font-weight: bold; font-size: 1.2rem; margin-right: 10px;">Select Emoji:</label>
+  <select id="emojiSelect" style="padding: 5px; border: 1px solid #3498db;">
+    <option value="Z,z">(Z,z)</option>
+    <option value="😀,😃">(😀, 😃)</option>
+    <option value="😼,😾">(😼,😾)</option>
+    <option value="😞,😔">(😞,😔)</option>
+    <option value="👯,👯‍♂️">(👯,👯‍♂️)</option>
+    <option value="🉐,㊙️">(🉐,㊙️)</option>
+  </select>
+  <span>*for emojis 6 by 30 is recomended; for letters 15 by 30 is recomended.</span>
 </div>
 
-<div style="margin: 10px 0;">
-  <label for="emoji2" style="font-weight: bold; font-size: 1.2rem; margin-right: 10px;">Second Emoji:</label>
-  <input type="text" id="emoji2" value="z" style="width: 30px; padding: 5px; border: 1px solid #3498db;">
-</div>
 
 <button id="generateButton" style="background-color: #3498db; color: #fff; border: none; padding: 10px 20px; font-size: 1.5rem; cursor: pointer; border-radius: 5px; margin-top: 20px;">Generate Emoji Grid</button>
+<span>*consider that for emojis each row is 3 rows aprox.</span>
 </div>
     <div id="body1">
         <div class="emoji-container" id="ec"></div>
