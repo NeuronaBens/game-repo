@@ -1,0 +1,23 @@
+.center-content {
+  /* Center vertically and horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+}
+#game-container {
+  width: 50vw;
+  height: 50vh;
+  background-color: gray;
+}
+
+table {
+  width: 100%;
+  height: 100%;
+  border: 3px black double;
+}
+.td {
+  width: 100%;
+  height: 100%;
+  background-color: lightgray;
+}
