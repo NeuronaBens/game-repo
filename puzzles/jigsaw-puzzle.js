@@ -72,8 +72,7 @@ function createTable(rows, columns) {
 
 let TableWidth = 10;
 let TableHieght = 10;
-const PercentageWidth = 25;
-const PercentageHeight = 50;
+const PercentageOfViewport = 50;
 // Usage example:
 createTable(TableWidth, TableHieght); // This will create a nxm table
 
@@ -82,8 +81,8 @@ let pieces = 0;
 function createPieces(fourByFourGrid, color) {
   const piece = document.createElement("table");
   piece.className = "piece";
-  piece.style.width = `${(PercentageWidth * 4) / TableWidth}vw`;
-  piece.style.height = `${(PercentageHeight * 4) / TableHieght}vh`;
+  piece.style.width = `${(PercentageOfViewport * 4) / TableWidth}vh`;
+  piece.style.height = `${(PercentageOfViewport * 4) / TableHieght}vh`;
   piece.innerHTML = "";
   piece.id = `piece-${pieces}`;
   pieces += 1;
