@@ -30,13 +30,35 @@ table {
   width: 25%;
   height: 25%;
 }
+
+.piece {
+  position: absolute;
+}
+
 .red {
   background-color: red;
 }
 .green {
   background-color: green;
 }
-
-.piece {
-  position: absolute;
+.blue {
+  background-color: blue;
+}
+.purple {
+  background-color: purple;
+}
+.yellow {
+  background-color: yellow;
+}
+.pink {
+  background-color: pink;
+}
+.black {
+  background-color: black;
+}
+.orange {
+  background-color: orange;
+}
+.lime {
+  background-color: lime;
 }
