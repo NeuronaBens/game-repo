@@ -299,6 +299,31 @@ class PieceManager {
     );
     return 10;
   }
+  static createBurlywoodPiece() {
+    createPieces3x3(
+      [
+        [1, 0, 0, 0],
+        [1, 0, 0, 0],
+        [1, 1, 0, 0],
+        [0, 0, 0, 0],
+      ],
+      "burlywood"
+    );
+    return 4; //size
+  }
+
+static createCadetbluePiece() {
+    createPieces3x3(
+      [
+        [0, 1, 0, 0],
+        [0, 1, 0, 0],
+        [1, 1, 0, 0],
+        [0, 0, 0, 0],
+      ],
+      "cadetblue"
+    );
+    return 4; //size
+  }
   static createRandomPiece(maxValue) {
     // Define a mapping of piece creation functions to their sizes
     const pieceCreationFunctions = [
@@ -311,6 +336,8 @@ class PieceManager {
       { func: PieceManager.createPinkPiece, size: 5 },
       { func: PieceManager.createOrangePiece, size: 15 },
       { func: PieceManager.createBlackPiece, size: 50 },
+      { func: PieceManager.createBurlywoodPiece, size: 4 },
+      { func: PieceManager.createCadetbluePiece, size: 4 },
     ];
 
     // Filter functions that produce pieces within the acceptable size range
