@@ -1,22 +1,18 @@
-//set UTILS
-const TIMER = new Timer(30, "timer");
-const SCORE = new Score("score");
-SCORE.setCssStyle("big", "center");
-SCORE.setLeftSideScore("");
-
-//start
-TIMER.start();
-SCORE.displayScore();
-
 class SumsGame {
-  constructor(goodAnswer = () => {}, badAnswer = () => {}) {
+  constructor(min, max, goodAnswer = () => {}, badAnswer = () => {}) {
+    this.min = min;
+    this.max = max;
     this.goodAnswer = goodAnswer;
     this.badAnswer = badAnswer;
     this.formElement = null;
   }
   generateSum() {
-    const firstNumber = Math.floor(Math.random() * 10);
-    const secondNumber = Math.floor(Math.random() * 10);
+    const firstNumber = Math.floor(
+      Math.random() * (this.max - this.min + 1) + this.min
+    );
+    const secondNumber = Math.floor(
+      Math.random() * (this.max - this.min + 1) + this.min
+    );
     this.correctSum = firstNumber + secondNumber;
 
     const form = document.createElement("form");
@@ -62,22 +58,45 @@ class SumsGame {
   }
 }
 
-//increment and decrement setups
-const iSUMS = () => {
-  SCORE.incrementScore();
-  console.log("inc");
-  sumGame.cleanCurrentForm();
-};
-const dSUMS = () => {
-  SCORE.decrementScore();
-  console.log("dec");
-};
+function createStartButton() {
+  const startButton = document.createElement("button");
+  startButton.textContent = "Start Game";
+  startButton.addEventListener("click", () => {
+    ///
 
-//game setup
-const sumGame = new SumsGame(iSUMS, dSUMS);
-sumGame.generateSum();
+    //set UTILS
+    const TIMER = new Timer(30, "timer");
+    const SCORE = new Score("score");
+    SCORE.setCssStyle("big", "center");
+    SCORE.setLeftSideScore("");
 
-//timer logic goes outside
-TIMER.setFinishedFunction(() => {
-  sumGame.stopAll();
-});
+    //start
+    TIMER.start();
+    SCORE.displayScore();
+
+    //increment and decrement setups
+    const iSUMS = () => {
+      SCORE.incrementScore();
+      console.log("inc");
+      sumGame.cleanCurrentForm();
+    };
+    const dSUMS = () => {
+      SCORE.decrementScore();
+      console.log("dec");
+    };
+
+    //game setup
+    const sumGame = new SumsGame(1, 99, iSUMS, dSUMS);
+    sumGame.generateSum();
+
+    //timer logic goes outside
+    TIMER.setFinishedFunction(() => {
+      sumGame.stopAll();
+    });
+
+    ///
+  });
+  document.body.prepend(startButton);
+}
+
+createStartButton();
