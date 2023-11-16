@@ -1,0 +1,28 @@
+you must put the files on the app (js and css files).
+
+use TIMER to reference outside of timer.js
+
+put these on your html:
+
+<link rel="stylesheet" href="timer.css" />
+
+<div id="timer" class="timer"></div>
+
+<script src="timer.js"></script>
+
+
+
+EXAMPLE USAGE:
+// █ for a timer that resets itself says testing and hello also
+const TIMER = new Timer(3, "timer"); // 10 seconds initial duration
+TIMER.setFinishedFunction(() => {
+  TIMER.test();
+  console.log("Hello");
+  TIMER.start();
+});
+TIMER.start(); // Start the timer
+
+
+// █ for a normal plain simple timer
+const TIMER = new Timer(3, "timer");
+TIMER.start();

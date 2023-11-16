@@ -1,0 +1,28 @@
+/* CSS Styles */
+.score-big-number {
+  font-size: 108px;
+}
+
+.score-medium-number {
+  font-size: 36px;
+}
+
+.score-small-number {
+  font-size: 18px;
+}
+
+.score-left {
+  text-align: left;
+}
+
+.score-center {
+  text-align: center;
+}
+
+.score-inline {
+  display: inline-block;
+}
+
+.score-full-width {
+  width: 100%;
+}

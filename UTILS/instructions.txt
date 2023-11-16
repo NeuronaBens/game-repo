@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="../UTILS/Score/score.css" />
+<link rel="stylesheet" href="../UTILS/Timer/timer.css" />
+
+<div id="score" class="score"></div>
+<div id="timer" class="timer"></div>
+
+<script src="../UTILS/Score/score.js"></script>
+<script src="../UTILS/Timer/timer.js"></script>
+
+const TIMER = new Timer(30, "timer");
+const SCORE = new Score("score");

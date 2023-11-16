@@ -1,0 +1,20 @@
+you must put the files on your app
+
+use SCORE to reference outside of timer.js
+
+put these on your html:
+
+<link rel="stylesheet" href="score.css" />
+
+<div id="score" class="score"></div>
+
+<script src="score.js"></script>
+
+
+
+EXAMPLE USAGE:
+const SCORE = new Score("score");
+SCORE.incrementScore(5);
+SCORE.setCssStyle("center", "big");
+SCORE.setLeftSideScore("Total Score: ");
+// You can use other methods like decrementScore, setScoreFunction, etc. as needed
