@@ -6,14 +6,14 @@ class MultiplyGame {
     this.badAnswer = badAnswer;
     this.formElement = null;
   }
-  generateSum() {
+  generateMultiply() {
     const firstNumber = Math.floor(
       Math.random() * (this.max - this.min + 1) + this.min
     );
     const secondNumber = Math.floor(
       Math.random() * (this.max - this.min + 1) + this.min
     );
-    this.correctSum = firstNumber + secondNumber;
+    this.correctMultiply = firstNumber * secondNumber;
 
     const form = document.createElement("form");
     this.formElement = form;
@@ -23,11 +23,11 @@ class MultiplyGame {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       const userAnswer = parseInt(input.value, 10);
-      if (userAnswer === this.correctSum) {
+      if (userAnswer === this.correctMultiply) {
         //here goes other score logic
         this.goodAnswer();
 
-        this.generateSum();
+        this.generateMultiply();
         input.style.color = "black";
       } else {
         //here goes other score logic for losing
@@ -40,7 +40,7 @@ class MultiplyGame {
 
     submitButton.textContent = "Submit";
     form.appendChild(
-      document.createTextNode(`${firstNumber} + ${secondNumber} = `)
+      document.createTextNode(`${firstNumber} * ${secondNumber} = `)
     );
     form.appendChild(input);
     form.appendChild(submitButton);
@@ -78,7 +78,7 @@ function createStartButton() {
     const iSUMS = () => {
       SCORE.incrementScore();
       console.log("inc");
-      sumGame.cleanCurrentForm();
+      multiplyGame.cleanCurrentForm();
     };
     const dSUMS = () => {
       SCORE.decrementScore();
@@ -86,12 +86,12 @@ function createStartButton() {
     };
 
     //game setup
-    const sumGame = new MultiplyGame(1, 99, iSUMS, dSUMS);
-    sumGame.generateSum();
+    const multiplyGame = new MultiplyGame(1, 99, iSUMS, dSUMS);
+    multiplyGame.generateMultiply();
 
     //timer logic goes outside
     TIMER.setFinishedFunction(() => {
-      sumGame.stopAll();
+      multiplyGame.stopAll();
     });
 
     ///
