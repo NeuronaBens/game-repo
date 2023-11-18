@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Find the Number Game</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Find the Number Game</h1>
+    <p>Enter the range for the number:</p>
+    <label for="min">Minimum:</label>
+    <input type="number" id="min" />
+    <label for="max">Maximum:</label>
+    <input type="number" id="max" />
+    <button onclick="startGame()">Start Game</button>
+
+    <div id="gameArea" style="display: none">
+      <p>Guess the number between <span id="rangeDisplay"></span></p>
+      <label for="guessInput">Your Guess:</label>
+      <input type="number" id="guessInput" />
+      <button onclick="checkGuess()">Check</button>
+      <p id="result"></p>
+      <p>Number of attempts: <span id="attempts">0</span></p>
+    </div>
+
+    <script>
+      let minRange, maxRange, secretNumber, attempts;
+
+      function startGame() {
+        minRange = parseInt(document.getElementById("min").value);
+        maxRange = parseInt(document.getElementById("max").value);
+        attempts = 0;
+
+        if (minRange >= maxRange || isNaN(minRange) || isNaN(maxRange)) {
+          alert("Please enter a valid range!");
+          return;
+        }
+
+        secretNumber =
+          Math.floor(Math.random() * (maxRange - minRange + 1)) + minRange;
+        document.getElementById("rangeDisplay").innerText =
+          minRange + " and " + maxRange;
+        document.getElementById("gameArea").style.display = "block";
+        document.getElementById("attempts").innerText = attempts;
+      }
+
+      function checkGuess() {
+        const guess = parseInt(document.getElementById("guessInput").value);
+
+        if (isNaN(guess)) {
+          document.getElementById("result").innerText =
+            "Please enter a valid number!";
+          return;
+        }
+
+        attempts++;
+        document.getElementById("attempts").innerText = attempts;
+
+        if (guess === secretNumber) {
+          document.getElementById("result").innerText =
+            "Congratulations! You guessed the number!";
+        } else if (guess < secretNumber) {
+          document.getElementById("result").innerText = "Try a higher number.";
+        } else {
+          document.getElementById("result").innerText = "Try a lower number.";
+        }
+      }
+    </script>
+  </body>
+</html>
